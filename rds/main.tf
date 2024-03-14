@@ -29,16 +29,16 @@ provider "aws" {
 }
 
 resource "aws_db_instance" "bd-soat3" {
-  identifier           = "bd-soat3"
-  instance_class       = "db.t2.micro"
-  allocated_storage    = 10
-  engine               = "mysql"
-  engine_version       = "5.7"
-  db_name              = "soat3"
-  username             = "admin"
-  password             = "Agos1918"
-  db_subnet_group_name = aws_db_subnet_group.db-subnet.id
-  #vpc_security_group_ids = [aws_security_group.rds.id]
+  identifier             = "bd-soat3"
+  instance_class         = "db.t2.micro"
+  allocated_storage      = 10
+  engine                 = "mysql"
+  engine_version         = "5.7"
+  db_name                = "soat3"
+  username               = "admin"
+  password               = "Agos1918"
+  db_subnet_group_name   = aws_db_subnet_group.db-subnet.id
+  vpc_security_group_ids = [aws_security_group.sg-rds.id]
   #parameter_group_name = aws_db_parameter_group.bd-soat3.name
   publicly_accessible = true
   skip_final_snapshot = true
