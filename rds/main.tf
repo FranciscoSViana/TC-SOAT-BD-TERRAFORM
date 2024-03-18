@@ -39,6 +39,6 @@ resource "aws_db_instance" "bd-soat3" {
   password               = "Agos1918"
   db_subnet_group_name   = aws_db_subnet_group.db-subnet.id
   vpc_security_group_ids = [aws_security_group.sg-rds.id]
-  publicly_accessible = true
-  skip_final_snapshot = true
+  publicly_accessible    = true
+  skip_final_snapshot    = true
 }
